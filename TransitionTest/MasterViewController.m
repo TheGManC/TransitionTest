@@ -8,10 +8,16 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "GCSplitPresentTransition.h"
+#import "GCSplitDismissTransition.h"
 
-@interface MasterViewController ()
+
+@interface MasterViewController ()<UIViewControllerTransitioningDelegate>
 
 @property NSMutableArray *objects;
+
+@property (nonatomic) GCSplitPresentTransition * transition;
+@property (nonatomic) GCSplitDismissTransition * dismissTransition;
 @end
 
 @implementation MasterViewController
@@ -20,6 +26,11 @@
     [super awakeFromNib];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +38,9 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.transition = [[GCSplitPresentTransition alloc] init];
+    self.dismissTransition = [[GCSplitDismissTransition alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +85,22 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+    UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+    
+    self.transition.sourceView=cell;
+    self.dismissTransition.sourceView=cell;
+    
+    DetailViewController * detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+    detailViewController.modalPresentationStyle = UIModalPresentationCustom;
+    detailViewController.transitioningDelegate = self;
+ 
+    
+    [self presentViewController:detailViewController animated:YES completion:NULL];
+    //[self performSegueWithIdentifier:@"showDetail" sender:self];
+}
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
@@ -83,6 +113,17 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    
+    //return new instance of custom transition
+    return self.transition;
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    
+    return self.dismissTransition;
 }
 
 @end

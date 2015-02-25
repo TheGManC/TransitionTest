@@ -8,12 +8,14 @@
 
 #import "DetailViewController.h"
 
+
 @interface DetailViewController ()
+
+- (IBAction)cancel:(id)sender;
 
 @end
 
 @implementation DetailViewController
-
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem {
@@ -36,6 +38,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    self.view.backgroundColor=[UIColor lightGrayColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,4 +48,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cancel:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

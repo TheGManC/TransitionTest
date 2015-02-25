@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEAF2A781A9338EA00D7B59E /* GCSplitDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAF2A771A9338EA00D7B59E /* GCSplitDismissTransition.m */; };
 		DEB2CA141A928D2800DA11CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB2CA131A928D2800DA11CA /* main.m */; };
 		DEB2CA171A928D2800DA11CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB2CA161A928D2800DA11CA /* AppDelegate.m */; };
 		DEB2CA1A1A928D2800DA11CA /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB2CA191A928D2800DA11CA /* MasterViewController.m */; };
@@ -15,6 +16,7 @@
 		DEB2CA221A928D2800DA11CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB2CA211A928D2800DA11CA /* Images.xcassets */; };
 		DEB2CA251A928D2800DA11CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB2CA231A928D2800DA11CA /* LaunchScreen.xib */; };
 		DEB2CA311A928D2800DA11CA /* TransitionTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB2CA301A928D2800DA11CA /* TransitionTestTests.m */; };
+		DEB2CA3C1A928D6F00DA11CA /* GCSplitPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB2CA3B1A928D6F00DA11CA /* GCSplitPresentTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DEAF2A761A9338EA00D7B59E /* GCSplitDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSplitDismissTransition.h; sourceTree = "<group>"; };
+		DEAF2A771A9338EA00D7B59E /* GCSplitDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSplitDismissTransition.m; sourceTree = "<group>"; };
 		DEB2CA0E1A928D2800DA11CA /* TransitionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB2CA121A928D2800DA11CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB2CA131A928D2800DA11CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		DEB2CA2A1A928D2800DA11CA /* TransitionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB2CA2F1A928D2800DA11CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB2CA301A928D2800DA11CA /* TransitionTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionTestTests.m; sourceTree = "<group>"; };
+		DEB2CA3A1A928D6F00DA11CA /* GCSplitPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSplitPresentTransition.h; sourceTree = "<group>"; };
+		DEB2CA3B1A928D6F00DA11CA /* GCSplitPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSplitPresentTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +94,12 @@
 				DEB2CA161A928D2800DA11CA /* AppDelegate.m */,
 				DEB2CA181A928D2800DA11CA /* MasterViewController.h */,
 				DEB2CA191A928D2800DA11CA /* MasterViewController.m */,
+				DEB2CA3A1A928D6F00DA11CA /* GCSplitPresentTransition.h */,
+				DEB2CA3B1A928D6F00DA11CA /* GCSplitPresentTransition.m */,
 				DEB2CA1B1A928D2800DA11CA /* DetailViewController.h */,
 				DEB2CA1C1A928D2800DA11CA /* DetailViewController.m */,
+				DEAF2A761A9338EA00D7B59E /* GCSplitDismissTransition.h */,
+				DEAF2A771A9338EA00D7B59E /* GCSplitDismissTransition.m */,
 				DEB2CA1E1A928D2800DA11CA /* Main.storyboard */,
 				DEB2CA211A928D2800DA11CA /* Images.xcassets */,
 				DEB2CA231A928D2800DA11CA /* LaunchScreen.xib */,
@@ -228,6 +238,8 @@
 				DEB2CA1A1A928D2800DA11CA /* MasterViewController.m in Sources */,
 				DEB2CA141A928D2800DA11CA /* main.m in Sources */,
 				DEB2CA1D1A928D2800DA11CA /* DetailViewController.m in Sources */,
+				DEAF2A781A9338EA00D7B59E /* GCSplitDismissTransition.m in Sources */,
+				DEB2CA3C1A928D6F00DA11CA /* GCSplitPresentTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,7 @@
 				DEB2CA361A928D2800DA11CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEB2CA371A928D2800DA11CA /* Build configuration list for PBXNativeTarget "TransitionTestTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				DEB2CA391A928D2800DA11CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
